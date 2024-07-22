@@ -87,4 +87,25 @@ let resultValue = 101;
 spinBtn.addEventListener("click", () => {
     spinBtn.disabled = true;
     //empty final value
+    finalValue.innerHTML = `<p>Good Luck!</p>`;
+    //generate random degree to stop weel
+    let randomDegree = Math.floor(Math.random() * (355 - 0 + 1) + 0);
+    //interval for rotation animation
+    let rotationInterval = window.setInterval(() => {
+        //set rotation for pie chart
+        myChart.options.rotation = myChart.options.rotation + resultValue;
+        //update chart with new value
+        myChart.update();
+        //if rotation > 360 reset it back to 0
+        if (myChart.options.rotation >= 360) {
+            count += 1;
+            resultValue -= 5;
+            myChart.options.rotation = 0;
+        } else if (count > 15 && myChart.options.rotation == randomDegree) {
+            valueGenerater(randomDegree);
+            clearInterval(rotationInterval);
+            count = 0;
+            resultValue = 101;
+        }
+    }, 10)
 })
