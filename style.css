@@ -62,8 +62,8 @@ body {
     -o-transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
-    height: 26%;
-    width: 26%;
+    height: 24%;
+    width: 24%;
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -71,4 +71,33 @@ body {
     -o-border-radius: 50%;
     cursor: pointer;
     border: 0;
+    background-color: #c2b5c9;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #874496;
+}
+
+img {
+    position: absolute;
+    top: 40%;
+    left: 85%;
+    width: 100px;
+    height: 100px;
+}
+
+#final-value {
+    font-size: 30px;
+    text-align: center;
+    color: #320b3b;
+    margin-top: 1.5em;
+
+}
+
+@media screen and (max-widht:768px){
+    .wrapper{
+        font-size: 12px;
+    }
+    img{
+        right: -5%;
+    }
 }
